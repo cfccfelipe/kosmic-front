@@ -1,8 +1,10 @@
 import { gql } from '@apollo/client';
-export const CREATE_DATA = gql`
-	mutation createData {
-		createData {
-
+export const GET_ALL_VETS = gql`
+	query getAllVets {
+		getAllVets {
+			fullname
+			email
+			phone
 		}
 	}
 `;
