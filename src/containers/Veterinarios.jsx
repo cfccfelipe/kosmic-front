@@ -3,6 +3,7 @@ import Navbar from '../components/navbar';
 import { GET_ALL_VETS } from '../gql/querysGql';
 import { useQuery } from '@apollo/client';
 import InfoMostrada from '../components/infoMostrada';
+import { Link } from 'react-router-dom';
 
 const Veterinarios = () => {
 	const Content = () => {
@@ -35,7 +36,10 @@ const Veterinarios = () => {
 		<>
 			<Navbar />
 			<Content />
-			<Footer />
+
+			<Link to='/nuevoveterinario'>
+				<button>Agregar</button>
+			</Link>
 		</>
 	);
 };
