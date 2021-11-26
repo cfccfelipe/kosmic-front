@@ -26,10 +26,6 @@ body * {
 }
 
 
-a {
-   text-decoration: none;
-   color: #fff;
-}
 /* Containers */
 
 .home-bg{
@@ -66,27 +62,40 @@ a {
 
 /* nav */
 
-.navbar{
+
+
+.navbar-main{
     position: fixed;
     top: 0;
-    height: 50px;
+    height: 65px;
     width: 100%;
+    background-color: #141a29;
     color: white;
-    display: flex;
+    display: grid;
     align-items:center;
+    grid-template-columns: 50% 50%;
 }
 
-.nav-item{
+
+.redirects{
+    display: flex;
+    align-items:center;
+    flex-direction: row-reverse;
+}
+.redirects a{
     border-radius: 5px;
     height:40px;
-    width: 200px;
-    margin: 0px 0 0 18px ;
+    width: 100px;
+    margin: 0 18px 0 0;
     display:flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    color: white;
 }
 
-.nav-item:hover{
-    background-color: #38f;
+.navbar-main a:hover{
+    color: black;
+    background-color: #fff;
 }
       

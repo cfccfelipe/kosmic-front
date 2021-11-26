@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-//import Footer from '../components/Footer';
-//import Header from '../components/Header';
+import Gerentes from '../components/Gerentes';
 import Home from '../containers/Home';
 
 const AppRouter = () => {
@@ -9,6 +8,7 @@ const AppRouter = () => {
 		<Router>
             <Routes>
                 <Route exact path='/' element={<Home />} />
+                <Route exact path='/gerentes' element={<Gerentes />} />
             </Routes>
 		</Router>
 	);
