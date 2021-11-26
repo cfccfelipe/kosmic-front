@@ -1,4 +1,5 @@
 import React from 'react';
+import "./style.css";
 import AppRouter from './routers/AppRouter';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import 'bootstrap/dist/css/bootstrap.min.css';

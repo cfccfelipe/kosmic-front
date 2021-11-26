@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { GET_ALL_VETS } from '../gql/querysGql';
 import { useQuery } from '@apollo/client';
+import backg from "../media/fondo.jpg";
 
 const ShowVets = () => {
 	const { data, loading, error } = useQuery(GET_ALL_VETS);
@@ -32,13 +34,24 @@ const ShowVets = () => {
 const Home = () => {
 
 
+    const st = {backgroundImage: `url(${backg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center"};
+
     return (
 
-        <div className="home-background"
-             style = {{backgroundImage: `url(${backg})`,
-                     backgroundSize: "cover",
-                     backgroundPosition: "center"
-             }}>
+        <div className="home-bg flexcenter" style={st}>
+
+                <div className="home-main flexcenter">
+                    <div className="whitestr flexcenter">
+
+                        <h2>Bienvenido a Kosmic</h2>
+                        <br />
+                        <Link to="/gerentes">Ir a gestion de gerentes</Link>
+                        <Link to="/login">Ir a login</Link>
+
+                    </div>
+                </div>
 
         </div>
     )
