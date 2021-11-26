@@ -49,6 +49,7 @@ const Home = () => {
                         <br />
                         <Link to="/gerentes">Ir a gestion de gerentes</Link>
                         <Link to="/login">Ir a login</Link>
+                        <Link to="/veterinarios">Ir a gestion de veterinarios</Link>
 
                     </div>
                 </div>

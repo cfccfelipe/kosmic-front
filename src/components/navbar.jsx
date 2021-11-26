@@ -16,6 +16,7 @@ const Navbar = () => {
             <div className="redirects">
                 <Link to="/gerentes">Gerentes </Link>
                 <Link to="/login">Login </Link>
+                <Link to="/veterinarios">Veterinarios </Link>
             </div>
         </nav>
     )

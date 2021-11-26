@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 import Navbar from "./navbar";
 import { GET_ALL_VETS } from '../gql/querysGql';
 import { useQuery } from '@apollo/client';
-
+import InfoMostrada from "./gerentesInfo";
 
 const Veterinarios = () => {
 
@@ -16,9 +16,14 @@ const Veterinarios = () => {
         if (loading) return 'Loading...';
         if (error) return <pre>{error.message}</pre>;
 
-        listVets = data?.getAllVets.map((veterinarios, i) => <p key={i} > 
-            {veterinarios.fullname} </p>
-        )
+        listVets = data?.getAllVets.map((veterinarios, i) => {
+           return (
+                <InfoMostrada 
+                    email={veterinarios.email}
+                    phone={veterinarios.phone}
+                    name={veterinarios.fullname}/>
+           )
+        })
     
         return(
 
