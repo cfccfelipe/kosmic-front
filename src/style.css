@@ -2,8 +2,9 @@
 
 :root {
   --darkGrey: #242a29;
-  --mainGreen:  #55ba12 ;
-  --paleGreen:  #87ca72 ;
+  --mainGreen:  #559a62 ;
+  --paleGreen:  #87da92 ;
+  --paleGrey: #dedede;
 }
 
 
@@ -46,6 +47,49 @@ body * {
     color: var(--mainGreen);
 }
 
+.page-container2{
+    background-color: var(--paleGrey);
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.columncontainer{
+    margin: 0 auto;
+    width: 1000px;
+    max-width: 85%;
+    flex-direction: column;
+    background-color: white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.columncontainer form{
+    flex-direction: column;
+}
+
+.columncontainer h2{
+    margin: 70px;
+    color: var(--mainGreen);
+}
+
+.columncontainer p, input{
+    margin: 30px;
+}
+
+.columncontainer input {
+    border-radius: 20px;
+    border:1px solid;
+}
+
+.submitbtn{
+    margin-top:40px;
+    margin-bottom: 80px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: var(--paleGreen);
+    border: 1px solid black;
+}
+
 .info-container{
     margin-top: 100px;
     display: flex;
@@ -68,6 +112,44 @@ body * {
     background-color: var(--paleGreen);
     color: white;
 }
+
+.centered-menu{
+    background-color: var(--darkGrey);
+    color: white;
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    width: 400px;
+    height: 300px;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.button-cont{
+    width: 300px;
+    display: grid;
+    grid-template-columns:33% 34% 33%;
+}
+
+.button-green{
+    margin-top:90px;
+    height: 40px;
+    background-color: var(--paleGreen);
+    border: 1px solid var(--darkGrey);
+}
+
+.button-green:hover{
+    background-color: var(--mainGreen);
+}
+
+.btlf{
+    border-radius: 20px 0 0 20px; 
+}
+
+.btrg{
+    border-radius: 0 20px 20px 0; 
+}
+
 /* Home */
 
 .home-bg{

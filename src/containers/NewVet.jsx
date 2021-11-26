@@ -5,11 +5,13 @@ import { NEW_VET } from '../gql/mutationsGql';
 import { useState } from 'react';
 
 const NewVet = () => {
+
 	const [id, setId] = useState('');
 	const [fullname, setFullname] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 	const [clinic, setClinic] = useState('');
+
 	const [newVet, { data, loading, error }] = useMutation(NEW_VET);
 
 	if (loading) return 'Crendo...';
