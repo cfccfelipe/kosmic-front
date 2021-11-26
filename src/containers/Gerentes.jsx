@@ -1,5 +1,5 @@
 import Footer from "../components/Footer";
-import Navbar from "./navbar";
+import Navbar from "../components/navbar";
 import { GET_ALL_VETS } from '../gql/querysGql';
 import { useQuery } from '@apollo/client';
 

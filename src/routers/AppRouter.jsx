@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Gerentes from '../components/Gerentes';
-import Veterinarios from '../components/Veterinarios';
+import Gerentes from '../containers/Gerentes';
+import Veterinarios from '../containers/Veterinarios';
 import Home from '../containers/Home';
 
 const AppRouter = () => {
