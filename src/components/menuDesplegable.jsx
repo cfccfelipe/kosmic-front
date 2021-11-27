@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 
 const MenuDes = props => {
 
@@ -8,7 +8,11 @@ const MenuDes = props => {
                 
                 {props.children}
                 <div className="button-cont">
-                    <button className="button-green btlf" onClick={props.actualizar} > Actualizar </button>
+                    <button className="button-green btlf" > 
+                        <Link to={props.actualizar} >
+                           Actualizar
+                        </Link>
+                    </button>
                     <button className="button-green" onClick={props.eliminar} > Eliminar </button>
                     <button className="button-green btrg" onClick={props.salir} > Salir </button> 
                 </div>

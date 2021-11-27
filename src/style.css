@@ -1,9 +1,9 @@
 /* global*/
 
 :root {
-  --darkGrey: #242a29;
+  --darkGrey: #141a19;
   --mainGreen:  #25ba52 ;
-  --paleGreen:  #139a32 ;
+  --paleGreen:  #139a3c ;
   --paleGrey: #dedede;
 }
 
@@ -40,6 +40,7 @@ body * {
     width: 1000px;
     max-width: 85%;
     flex-direction: column;
+    padding-bottom:50px;
 }
 
 .page-container h2{
@@ -48,10 +49,13 @@ body * {
 }
 
 .page-container2{
-    background-color: var(--paleGrey);
+    background-color: var(--darkGrey);
     width: 100%;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    box-shadow: 10px 11px 17px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 11px 17px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 11px 17px 0px rgba(0,0,0,0.75);
 }
 
 .columncontainer{
@@ -87,9 +91,9 @@ body * {
     margin-bottom: 80px;
     height: 50px;
     border-radius: 10px;
-    background-color: var(--darkGrey);
+    background-color: var(--paleGreen);
     color: white;
-    border: 1px solid black;
+    border: 1px solid var(--paleGreen);
 }
 .submitbtn:hover{
     border-color: var(--mainGreen);
@@ -145,6 +149,15 @@ body * {
     height: 40px;
     background-color: var(--paleGreen);
     border: 1px solid var(--darkGrey);
+    color: white;
+}
+
+.button-green a{
+    color:white;
+    text-decoration:none;
+}
+.button-green:hover a{
+    color:white;
 }
 
 .button-green:hover{
@@ -211,6 +224,7 @@ body * {
     display: grid;
     align-items:center;
     grid-template-columns: 50% 50%;
+    border-bottom: 1px solid white;
 }
 
 .redirects{

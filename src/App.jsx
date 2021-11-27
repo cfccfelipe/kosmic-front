@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
 const client = new ApolloClient({
-	uri: 'http://localhost:4000/',
+	uri: 'https://kosmic-back.herokuapp.com/',
 	cache: new InMemoryCache()
 });
 

@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Gerentes from '../containers/Gerentes';
 import Veterinarios from '../containers/Veterinarios';
 import Home from '../containers/Home';
-import VeterinarioDetail from '../containers/VeterinarioDetail';
-import NewVet from '../containers/NewVet';
+import UpdateVet from '../containers/UpdateVet';
 
 const AppRouter = () => {
 	return (
@@ -13,8 +12,7 @@ const AppRouter = () => {
 				<Route exact path='/' element={<Home />} />
 				<Route exact path='/gerentes' element={<Gerentes />} />
 				<Route exact path='/veterinarios' element={<Veterinarios />} />
-				<Route exact path='/nuevoveterinario' element={<NewVet />} />
-				<Route exact path='/veterinarios/:id' element={<VeterinarioDetail />} />
+				<Route exact path='/vetActualizar/:id' element={<UpdateVet />} />
 			</Routes>
 		</Router>
 	);
