@@ -5,8 +5,13 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
+
+//  'https://kosmic-back.herokuapp.com/',
+//  "http://localhost:4000",
+
+
 const client = new ApolloClient({
-	uri: 'https://kosmic-back.herokuapp.com/',
+    uri: 'https://kosmic-back.herokuapp.com/',
 	cache: new InMemoryCache()
 });
 

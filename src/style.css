@@ -41,6 +41,7 @@ body * {
     max-width: 85%;
     flex-direction: column;
     padding-bottom:50px;
+    overflow: hidden;
 }
 
 .page-container h2{
@@ -49,13 +50,12 @@ body * {
 }
 
 .page-container2{
+    margin: 0 auto;
     background-color: var(--darkGrey);
     width: 100%;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    box-shadow: 10px 11px 17px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 10px 11px 17px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 11px 17px 0px rgba(0,0,0,0.75);
+    overflow:hidden;
 }
 
 .columncontainer{

@@ -15,9 +15,11 @@ export const GET_ALL_VETS = gql`
 export const GET_VET_BY_ID = gql`
 	query getVetById($id: String!) {
 		getVetById {
-			name
+		    fullname
 			email
 			phone
+            clinic
+            id
 		}
 	}
 `;
