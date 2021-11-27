@@ -175,9 +175,8 @@ body * {
 /* Home */
 
 .home-bg{
-    position: absolute;
     width: 100%;
-    height: 100%; 
+    height: 1000px; 
     overflow: hidden;
 }
 
@@ -185,8 +184,8 @@ body * {
     width: 600px;
     max-width: 80%;
     height: 500px;
-    backdrop-filter: blur(8px);
-    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(18px);
+    background-color: rgba(0,0,0,0.5);
     border-radius: 20px;
 }
 
@@ -197,6 +196,7 @@ body * {
     border: 1px solid white;
     flex-direction: column;
     color: white;
+    text-align:center;
 }
 
 .whitestr a{
@@ -205,9 +205,6 @@ body * {
     margin:20px;
 
 }
-
-
-
 
 
 /* nav */
@@ -224,7 +221,12 @@ body * {
     display: grid;
     align-items:center;
     grid-template-columns: 50% 50%;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid black;
+    z-index: 4;
+}
+
+.logo-container img{
+    margin-left: 30px;
 }
 
 .redirects{
@@ -244,7 +246,7 @@ body * {
     color: white;
 }
 
-.navbar-main a:hover{
+.redirects a:hover{
     color: white;
     background-color: var(--mainGreen);
 }

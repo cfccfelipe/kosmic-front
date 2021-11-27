@@ -4,10 +4,12 @@ import Gerentes from '../containers/Gerentes';
 import Veterinarios from '../containers/Veterinarios';
 import Home from '../containers/Home';
 import UpdateVet from '../containers/updateVet';
+import Navbar from '../components/navbar';
 
 const AppRouter = () => {
 	return (
 		<Router>
+            <Navbar />
 			<Routes>
 				<Route exact path='/' element={<Home />} />
 				<Route exact path='/gerentes' element={<Gerentes />} />

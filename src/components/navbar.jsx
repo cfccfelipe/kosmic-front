@@ -1,17 +1,15 @@
 import {Link} from "react-router-dom";
+import ToroLogo from "../media/LogoToro.png";
 
 const Navbar = () => {
-
-
-
 
     return (
         <nav className="navbar-main">
 
-            <div className="logo-container">
-                
+            <Link to="/" className="logo-container">
+                <img alt="logo-toro" src={ToroLogo} />
 
-            </div>
+            </Link>
         
             <div className="redirects">
                 <Link to="/gerentes">Gerentes </Link>

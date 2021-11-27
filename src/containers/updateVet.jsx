@@ -1,5 +1,3 @@
-import Footer from '../components/Footer';
-import Navbar from '../components/navbar';
 import { useMutation, useQuery } from '@apollo/client';
 import InfoMostrada from '../components/infoMostrada';
 import { GET_VET_BY_ID } from '../gql/querysGql';
@@ -76,16 +74,12 @@ const UpdateVet = () => {
 	if (error) return <pre>{error.message}</pre>;
 
 	return (
-        <>
-            <Navbar />
             <div className='page-container flexcenter'>
                 <h2>Detalle del veterinario</h2>
                 <InfoMostrada email={vet.email} phone={vet.phone} name={vet.fullname} />
 
                     Eliminar
-                <Footer />
             </div>
-        </>
 	);
    };
 }
