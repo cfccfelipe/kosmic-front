@@ -6,6 +6,7 @@ const MenuDes = props => {
             <div className="centered-menu flexcenter">
                 <h3>{props.name}</h3> 
                 
+                {props.children}
                 <div className="button-cont">
                     <button className="button-green btlf" onClick={props.actualizar} > Actualizar </button>
                     <button className="button-green" onClick={props.eliminar} > Eliminar </button>

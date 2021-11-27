@@ -83,6 +83,7 @@ const Veterinarios = () => {
             </div>                                                                               
         )                                                                                        
     }
+
 	const Content = () => {
 		let listVets = [];
 		const { data, loading, error } = useQuery(GET_ALL_VETS);
@@ -103,12 +104,28 @@ const Veterinarios = () => {
 			);
 		});
 
+        const MenuCompleto = () => {
+
+            let {fullname, clinic, id, email, phone } = data?.getAllVets.filter(el => el._id ===focusId)[0]
+
+
+            return(
+                <MenuDes name={fullname} salir={() => setDisplayed(!isDisplayed)}>
+                    <p>Identificacion : {id}</p>
+                    <p>Numero telefonico : {phone}</p>
+                    <p>Email : {email}</p>
+                    <p>Clinica : {clinic}</p>
+                </MenuDes>
+
+            )
+        }
 		return (
 			<div className='page-container flexcenter'>
 				<h2>Lista de Veterinarios</h2>
 
 				<div className='info-container'>{listVets}</div>
-                  {isDisplayed && <MenuDes name={data?.getAllVets.filter(el => el._id ===focusId)[0].fullname}/>}
+                    {isDisplayed && <MenuCompleto />}
+
 
 			</div>
 		);

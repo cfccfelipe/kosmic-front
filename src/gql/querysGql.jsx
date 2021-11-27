@@ -6,6 +6,8 @@ export const GET_ALL_VETS = gql`
 			fullname
 			email
 			phone
+            clinic
+            id
 		}
 	}
 `;
