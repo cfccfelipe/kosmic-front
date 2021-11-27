@@ -2,8 +2,8 @@
 
 :root {
   --darkGrey: #242a29;
-  --mainGreen:  #559a62 ;
-  --paleGreen:  #87da92 ;
+  --mainGreen:  #25ba52 ;
+  --paleGreen:  #139a32 ;
   --paleGrey: #dedede;
 }
 
@@ -79,24 +79,29 @@ body * {
 .columncontainer input {
     border-radius: 20px;
     border:1px solid;
+    text-align: center;
 }
 
 .submitbtn{
     margin-top:40px;
     margin-bottom: 80px;
     height: 50px;
-    border-radius: 20px;
-    background-color: var(--paleGreen);
+    border-radius: 10px;
+    background-color: var(--darkGrey);
+    color: white;
     border: 1px solid black;
+}
+.submitbtn:hover{
+    border-color: var(--mainGreen);
+    background-color: var(--mainGreen);
 }
 
 .info-container{
-    margin-top: 100px;
+    margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: normal;
-
 }
 
 .info-display{

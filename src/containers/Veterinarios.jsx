@@ -1,6 +1,6 @@
 import Navbar from '../components/navbar';
 import {  GET_ALL_VETS } from '../gql/querysGql';
-import { NEW_VET  } from '../gql/mutationsGql';
+import { NEW_VET, DELETE_VET_BY_ID  } from '../gql/mutationsGql';
 import { useQuery, useMutation } from '@apollo/client';
 import InfoMostrada from '../components/infoMostrada';
 import { Link } from 'react-router-dom';
@@ -107,14 +107,29 @@ const Veterinarios = () => {
         const MenuCompleto = () => {
 
             let {fullname, clinic, id, email, phone } = data?.getAllVets.filter(el => el._id ===focusId)[0]
+            
+	        const [deleteVetById, { data: deleteVet }] = useMutation(DELETE_VET_BY_ID);
 
+            const deleteThis = () => {
+
+                deleteVetById({
+                    variables: { id: focusId }
+                });
+                if (deleteVet) {
+                    alert('Eliminado');
+                }
+            }
 
             return(
-                <MenuDes name={fullname} salir={() => setDisplayed(!isDisplayed)}>
+                <MenuDes name={fullname} 
+                    salir={() => setDisplayed(!isDisplayed)}
+                    eliminar={deleteThis} >
+
                     <p>Identificacion : {id}</p>
                     <p>Numero telefonico : {phone}</p>
                     <p>Email : {email}</p>
                     <p>Clinica : {clinic}</p>
+
                 </MenuDes>
 
             )
