@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Gerentes from '../containers/Gerentes';
 import Veterinarios from '../containers/Veterinarios';
 import Home from '../containers/Home';
-import UpdateVet from '../containers/UpdateVet';
+import UpdateVet from '../containers/updateVet';
 
 const AppRouter = () => {
 	return (

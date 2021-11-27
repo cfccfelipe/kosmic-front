@@ -2,14 +2,13 @@ import Footer from '../components/Footer';
 import Navbar from '../components/navbar';
 import { useMutation, useQuery } from '@apollo/client';
 import InfoMostrada from '../components/infoMostrada';
-import { GET_ALL_VETS } from '../gql/querysGql';
+import { GET_VET_BY_ID } from '../gql/querysGql';
 import { useParams } from 'react-router-dom';
-import { DELETE_VET_BY_ID } from '../gql/mutationsGql';
-import { useState } from 'react';
+import useInput from '../hooks/useInput';
+import InputText from '../components/textInput';
 
 const UpdateVet = () => {
-	const { data, loading, error } = useQuery(GET_ALL_VETS);
-	const [deleteVetById, { data: deleteVet }] = useMutation(DELETE_VET_BY_ID);
+	const { data, loading, error } = useQuery(GET_VET_BY_ID);
 	const { id } = useParams();
     
     const FormNewVet = () => {                                                                   
@@ -20,21 +19,10 @@ const UpdateVet = () => {
         const [phone, setPhone] = useInput(0);                                                   
         const [clinic, setClinic] = useInput(""); 
 
-	    const [newVet, { data, loading, error }] = useMutation(NEW_VET);
 
         const enviar = e => {
             e.preventDefault();
 
-            newVet({
-                variables: {
-                    id: id,
-                    fullname: fullname,
-                    email: email,
-                    phone: Number(phone),
-                    clinic: clinic
-                }
-            });
-            console.log(phone);
             if (error) {
                 alert(error);
             } else {
@@ -78,12 +66,12 @@ const UpdateVet = () => {
 
 	const Content = () => {
 		let listVets = [];
-		const { data, loading, error } = useQuery(GET_ALL_VETS);
+		const { data, loading, error } = useQuery(GET_VET_BY_ID);
 
 
 	const vet = loading
 		? 'Loading'
-		: data?.getAllVets.filter((vet) => vet._id === id)[0];
+		: "something";
 	if (loading) return 'Loading...';
 	if (error) return <pre>{error.message}</pre>;
 
@@ -94,25 +82,11 @@ const UpdateVet = () => {
                 <h2>Detalle del veterinario</h2>
                 <InfoMostrada email={vet.email} phone={vet.phone} name={vet.fullname} />
 
-                <button
-                    onClick={(e) => {
-                        e.preventDefault();
-                        deleteVetById({
-                            variables: {
-                                id: id
-                            }
-                        });
-                        if (deleteVet) {
-                            alert('Eliminado');
-                        }
-                    }}
-                >
                     Eliminar
-                </button>
                 <Footer />
             </div>
         </>
 	);
-};
-
+   };
+}
 export default UpdateVet;
