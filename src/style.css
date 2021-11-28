@@ -4,7 +4,6 @@
   --darkGrey: #141a19;
   --mainGreen:  #25ba52 ;
   --paleGreen:  #139a3c ;
-  --paleGrey: #dedede;
 }
 
 
@@ -115,6 +114,10 @@ body * {
     border-radius: 20px;
     flex-direction: column;
     border: 1px  solid var(--darkGrey);
+}
+
+.info-display:hover h2{
+    color: white;
 }
 
 .info-display:hover{

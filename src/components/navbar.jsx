@@ -11,6 +11,8 @@ const Navbar = () => {
 			<div className='redirects'>
 				<Link to='/gestores'>Gestores </Link>
 				<Link to='/login'>Login </Link>
+				<Link to='/report'>Reportes </Link>
+				<Link to='/bovinos'>Bovinos </Link>
 				<Link to='/veterinarios'>Veterinarios </Link>
 			</div>
 		</nav>

@@ -87,11 +87,13 @@ const Gestores = () => {
 			return (
 				<InfoMostrada
 					key={i}
-					method={() => desplegarMenu(gestores._id)}
-					email={gestores.email}
-					phone={gestores.phone}
-					name={gestores.name}
-				/>
+					method={() => desplegarMenu(gestores._id)} >
+
+                <h2>{gestores.name} </h2>
+                <p>Telefono : {gestores.phone} </p>
+                <p>Correo : {gestores.email} </p>
+				
+                </InfoMostrada>
 			);
 		});
 

@@ -60,13 +60,10 @@ const Bovinos = () => {
 
                         <h2>Añade una nueva vaca</h2>                                   
 
-                        <p>Identificacion</p>                                                   
-                        <InputText setter={setId} val={id} />                           
-
-                        <p>Nombre completo</p>                                                   
+                        <p>Nombre</p>                                                   
                         <InputText setter={setFName} val={fullname} />                           
 
-                        <p>Correo Electronico</p>                                                
+                        <p>Fecha de nacimiento</p>                                                
                         <InputText setter={setEmail} val={email} />                              
 
                         <p>Numero de celular</p>                                                 
@@ -97,7 +94,7 @@ const Bovinos = () => {
                     key={i}
                     method={() => desplegarMenu(bovi.id)}
 				>
-                    <h3>{bovi.name} </h3>
+                    <h2>{bovi.name} </h2>
                     <p>Fecha de nacimiento : {bovi.birth} </p>
                     <p>Estado : {bovi.state} </p>
 
