@@ -38,9 +38,9 @@ const Report = () => {
 	}
 
 	return (
-		<div className='page-container flexcenter'>
+		<div className='page-container2 chto-white flexcenter'>
 			<div className="table-container flexcenter">
-				<h2>Signos vitales en tiempo real</h2>
+				<h2>Reportes de signos Vitales</h2>
 				<table className="this-table">
 					<tr>
 						<th>ID</th>

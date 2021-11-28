@@ -104,15 +104,37 @@ body * {
 /* tablas */
 
 .table-container{
-    margin-top: 60px;
+    margin-top: 120px;
     background-color: var(--darkGrey);
     color: white;
     padding: 70px 50px;
     flex-direction: column;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0px 1px 50px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 1px 50px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 50px 0px rgba(0,0,0,0.75);
 }
 
+.chto-white{
+    background-color: white;
+}
 
+.table-container h2 {
+    color: var(--mainGreen);
+    margin-bottom: 70px;
+}
 
+.this-table{
+    width: 900px;
+}
+
+.this-table th, td{
+    text-align: center;
+}
+
+.this-table tr{
+    padding-bottom: 30px;
+}
 
 /* info despliegue - cartas */
 
