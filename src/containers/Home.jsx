@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import backg from "../media/fondo.jpg";
 
 

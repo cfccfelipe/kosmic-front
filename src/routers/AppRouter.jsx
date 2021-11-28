@@ -6,6 +6,7 @@ import Home from '../containers/Home';
 import UpdateVet from '../containers/updateVet';
 import Navbar from '../components/navbar';
 import Report from '../containers/Report';
+import Bovinos from '../containers/bovinos';
 
 const AppRouter = () => {
 	return (
@@ -13,10 +14,12 @@ const AppRouter = () => {
 			<Navbar />
 			<Routes>
 				<Route exact path='/' element={<Home />} />
+
 				<Route exact path='/gestores' element={<Gestores />} />
 				<Route exact path='/veterinarios' element={<Veterinarios />} />
 				<Route exact path='/vetActualizar/:id' element={<UpdateVet />} />
 				<Route exact path='/report' element={<Report />} />
+         <Route exact path='/bovinos' element={<Bovinos />} />
 			</Routes>
 		</Router>
 	);

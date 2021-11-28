@@ -1,13 +1,14 @@
-import {  GET_ALL_VETS } from '../gql/querysGql';
-import { NEW_VET, DELETE_VET_BY_ID  } from '../gql/mutationsGql';
+import {  GET_ALL_BOVINE } from '../gql/querysGql';
+import { NEW_VET ,DELETE_BOVINE_BY_ID } from '../gql/mutationsGql';
 import { useQuery, useMutation } from '@apollo/client';
 import InfoMostrada from '../components/infoMostrada';
 import { useState } from 'react';
 import useInput from "../hooks/useInput";
 import InputText from "../components/textInput";
 import MenuDes from '../components/menuDesplegable';
+import {Link} from 'react-router-dom';
 
-const Veterinarios = () => {
+const Bovinos = () => {
 
 
     const [isDisplayed, setDisplayed] = useState(false);                                         
@@ -15,10 +16,10 @@ const Veterinarios = () => {
 
     const desplegarMenu = id =>{                                                                 
         setFId(id);                                                                              
-        console.log(id);                                                                         
         setDisplayed(!isDisplayed);                                                              
     }   
-    const FormNewVet = () => {                                                                   
+    
+    const FormNewBovi = () => {
 
 	    const [id, setId] = useInput('');
         const [fullname, setFName] = useInput("");                                               
@@ -57,7 +58,7 @@ const Veterinarios = () => {
                 <div className="columncontainer flexcenter">
                     <form className="flexcenter"onSubmit={enviar} >                                                          
 
-                        <h2>Registra un nuevo veterinario</h2>                                   
+                        <h2>Añade una nueva vaca</h2>                                   
 
                         <p>Identificacion</p>                                                   
                         <InputText setter={setId} val={id} />                           
@@ -83,53 +84,65 @@ const Veterinarios = () => {
     }
 
 	const Content = () => {
-		let listVets = [];
-		const { data, loading, error } = useQuery(GET_ALL_VETS);
+		let listBovinos = [];
+		const { data, loading, error } = useQuery(GET_ALL_BOVINE);
 
 
 		if (loading) return 'Loading...';
-		if (error) return <pre>{error.message}</pre>;
-
-		listVets = data?.getAllVets.map((veterinarios, i) => {
+		if (error) {console.log(error); return <pre>{error.message}</pre>
+        }
+		listBovinos = data?.getAllBovine.map((bovi, i) => {
 			return (
 				<InfoMostrada
                     key={i}
-                    method={() => desplegarMenu(veterinarios._id)}
+                    method={() => desplegarMenu(bovi.id)}
 				>
-                    <h2>{veterinarios.fullname} </h2>
-                    <p>Correo : {veterinarios.email} </p>
-                    <p>Telefono : {veterinarios.email} </p>
-                    
+                    <h3>{bovi.name} </h3>
+                    <p>Fecha de nacimiento : {bovi.birth} </p>
+                    <p>Estado : {bovi.state} </p>
+
                 </InfoMostrada>
 			);
 		});
-
+        
         const MenuCompleto = () => {
 
-            let {fullname, clinic, id, email, phone } = data?.getAllVets.filter(el => el._id ===focusId)[0]
+            let {name, state, 
+                id, birth, records } = data?.getAllBovine.filter(el => el.id ===focusId)[0]
             
-	        const [deleteVetById, { data: deleteVet }] = useMutation(DELETE_VET_BY_ID);
+	        const [deleteBovineById, { data: deleteBovi }] = useMutation(DELETE_BOVINE_BY_ID);
 
             const deleteThis = () => {
 
-                deleteVetById({
+                deleteBovineById({
                     variables: { id: focusId }
                 });
-                if (deleteVet) {
+                if (deleteBovi) {
                     alert('Eliminado');
                 }
             }
 
+                console.log(records);
+                let LinksReports = records.map((el, i) =>{
+                 
+             return <Link key={i} to={"/registros/"+ el.member_id}>
+                        {el.member_id.event_date} 
+                    </Link>
+                }
+            )
+
+
             return(
-                <MenuDes name={fullname} 
+                <MenuDes name={name} 
                     actualizar={"/vetActualizar/"+ focusId}
                     salir={() => setDisplayed(!isDisplayed)}
                     eliminar={deleteThis} >
 
-                    <p>Identificacion : {id}</p>
-                    <p>Numero telefonico : {phone}</p>
-                    <p>Email : {email}</p>
-                    <p>Clinica : {clinic}</p>
+                    <p>Nombre : {name}</p>
+                    <p>Estado : {state}</p>
+                    <p>Fecha de nacimiento : {birth}</p>
+
+                    {LinksReports}
 
                 </MenuDes>
 
@@ -137,19 +150,17 @@ const Veterinarios = () => {
         }
 		return (
 			<div className='page-container flexcenter'>
-				<h2>Lista de Veterinarios</h2>
+				<h2>Lista de Bovinos</h2>
 
-				<div className='info-container'>{listVets}</div>
-                    {isDisplayed && <MenuCompleto />}
+				<div className='info-container'>{listBovinos}</div>
+                {isDisplayed && <MenuCompleto />}
 			</div>
 		);
 	};
-	return (
-		<>
-			<Content />
-            <FormNewVet />
-		</>
-	);
+	return <>	
+        <Content />
+        <FormNewBovi />
+        </>
 };
 
-export default Veterinarios;
+export default Bovinos;

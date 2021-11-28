@@ -30,6 +30,7 @@ export const DELETE_VET_BY_ID = gql`
 		deleteVetById(input: { id: $id })
 	}
 `;
+
 export const NEW_MANAGER = gql`
 	mutation newManager(
 		$id: String!
@@ -45,6 +46,18 @@ export const NEW_MANAGER = gql`
 				email: $email
 				phone: $phone
 				position: $position
+
+export const NEW_BOVINE = gql`
+	mutation newBovine(
+		$id: String!
+		$name: String!
+		$birth: String!
+	) {
+		newVet(
+			input: {
+				id: $id
+				name: $name
+				birth: $birth
 			}
 		) {
 			id
@@ -58,5 +71,13 @@ export const NEW_MANAGER = gql`
 export const DELETE_MANAGER_BY_ID = gql`
 	mutation deleteManagerById($id: ID!) {
 		deleteManagerById(input: { id: $id })
+            birth
+			state
+		}
+	}
+`;
+export const DELETE_BOVINE_BY_ID = gql`
+	mutation deleteBovineById($id: ID!) {
+		deleteVetById(input: { id: $id })
 	}
 `;
