@@ -37,9 +37,12 @@ const Treatment = () => {
 		if (error) return <pre>{error.message}</pre>;
 
 		return (
-			<div className='page-container2'>
-				<div className='columncontainer flexcenter'>
-					<Navbar />
+			<div className='page-container2'
+            >
+
+
+				<div className='columncontainer flexcenter'
+                style={{height:"950px"}}>
 
 					<form className='flexcenter' onSubmit={enviar}>
 						<h2>Escribir tratamiento</h2>
@@ -52,18 +55,13 @@ const Treatment = () => {
 						<button>Volver</button>
 					</Link>
 
-					<Footer />
 				</div>
 			</div>
 		);
 	};
 
 	return (
-		<div className='page-container flexcenter'>
-			<p></p>
-
 			<UpdateTreatment />
-		</div>
 	);
 };
 
