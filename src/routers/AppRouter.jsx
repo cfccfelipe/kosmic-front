@@ -24,7 +24,7 @@ const AppRouter = () => {
 				<Route exact path='/bovinos' element={<Bovinos />} />
 				<Route exact path='/bovino/:id' element={<UpdateBovine />} />
 				<Route exact path='/anomalias/:id' element={<Records />} />
-				<Route exact path='/anomalia/:id' element={<Treament />} />
+				<Route exact path='/anomalia/:record/:bovine' element={<Treament />} />
 			</Routes>
 		</Router>
 	);

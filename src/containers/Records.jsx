@@ -100,7 +100,7 @@ const Records = () => {
 					<p>Ritmo Cardiaco : {record.record_id.heart_rate} </p>
 					<p>Ritmo respiratorio: {record.record_id.breathing_rate} </p>
 					<p>Tratamiento: {record.treatment} </p>
-					<Link to={`/anomalia/${record.id}`}>
+					<Link to={`/anomalia/${record.id}/${bovine.id}`}>
 						<button type='button' class='btn btn-primary'>
 							Añadir tratamiento
 						</button>

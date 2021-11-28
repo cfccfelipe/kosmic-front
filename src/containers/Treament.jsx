@@ -1,27 +1,29 @@
-import { GET_ALL_BOVINE } from '../gql/querysGql';
-import { UPDATE_BOVINE_BY_ID } from '../gql/mutationsGql';
+import { UPDATE_TREATMENT_BOVINE_BY_ID } from '../gql/mutationsGql';
 import { useMutation } from '@apollo/client';
 import useInput from '../hooks/useInput';
-import InputText from '../components/textInput';
 import Navbar from '../components/navbar';
 import Footer from '../components/Footer';
 import { Link, useParams } from 'react-router-dom';
+import { useState } from 'react';
+import InputText from '../components/textInput';
 
 const Treatment = () => {
-	const { id } = useParams();
-	const UpdateState = () => {
-		const [state, setState] = useInput('');
+	const { record, bovine } = useParams();
+	const UpdateTreatment = () => {
+		const [treatment, setTreatment] = useInput('');
 
-		const [updateBovineById, { data, loading, error }] =
-			useMutation(UPDATE_BOVINE_BY_ID);
+		const [updateTreatmentBovineById, { data, loading, error }] = useMutation(
+			UPDATE_TREATMENT_BOVINE_BY_ID
+		);
 
 		const enviar = (e) => {
 			e.preventDefault();
 
-			updateBovineById({
+			updateTreatmentBovineById({
 				variables: {
-					id: id,
-					state: state
+					id_bovine: bovine,
+					id_record: record,
+					treatment: treatment
 				}
 			});
 			if (error) {
@@ -38,30 +40,18 @@ const Treatment = () => {
 			<div className='page-container2'>
 				<div className='columncontainer flexcenter'>
 					<Navbar />
-					<form className='flexcenter' onSubmit={enviar}>
-						<h2>Nuevo estado</h2>
 
-						<select
-							className='form-select'
-							onChange={setState}
-							value={state}
-							aria-label='Default select example'
-						>
-							<option value='Saludable'>Saludable</option>
-							<option value='Enfermo'>Enfermo</option>
-							<option value='Muerto'>Muerto</option>
-						</select>
-						<p></p>
-						<div class='btn-group' role='group' aria-label='Basic example'>
-							<button className='btn btn-success'> Guardar</button>
-							<Link to={'/bovinos'}>
-								<button type='button' class='btn btn btn-success'>
-									Volver
-								</button>
-							</Link>
-						</div>
-						<p></p>
+					<form className='flexcenter' onSubmit={enviar}>
+						<h2>Escribir tratamiento</h2>
+
+						<InputText setter={setTreatment} val={treatment} />
+
+						<button className='submitbtn'> Envia el registro </button>
 					</form>
+					<Link to={`/anomalias/${bovine}`}>
+						<button>Volver</button>
+					</Link>
+
 					<Footer />
 				</div>
 			</div>
@@ -72,7 +62,7 @@ const Treatment = () => {
 		<div className='page-container flexcenter'>
 			<p></p>
 
-			<UpdateState />
+			<UpdateTreatment />
 		</div>
 	);
 };

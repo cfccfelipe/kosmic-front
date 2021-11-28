@@ -122,3 +122,19 @@ export const NEW_RECORD_ON_BOVINE = gql`
 		}
 	}
 `;
+export const UPDATE_TREATMENT_BOVINE_BY_ID = gql`
+	mutation updateTreatmentBovineById(
+		$id_bovine: ID!
+		$id_record: ID!
+		$treatment: String!
+	) {
+		updateTreatmentBovineById(
+			input: {
+				id_bovine: $id_bovine
+				records: { id: $id_record, treatment: $treatment }
+			}
+		) {
+			id
+		}
+	}
+`;
