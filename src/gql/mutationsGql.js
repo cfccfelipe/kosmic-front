@@ -46,6 +46,16 @@ export const NEW_MANAGER = gql`
 				email: $email
 				phone: $phone
 				position: $position
+            }
+        ) {
+            id 
+            name
+            email
+            phone
+            position
+        }
+    }
+`;
 
 export const NEW_BOVINE = gql`
 	mutation newBovine(
@@ -71,9 +81,6 @@ export const NEW_BOVINE = gql`
 export const DELETE_MANAGER_BY_ID = gql`
 	mutation deleteManagerById($id: ID!) {
 		deleteManagerById(input: { id: $id })
-            birth
-			state
-		}
 	}
 `;
 export const DELETE_BOVINE_BY_ID = gql`
