@@ -58,13 +58,11 @@ export const NEW_MANAGER = gql`
 `;
 
 export const NEW_BOVINE = gql`
-	mutation newBovine($id: String!, $name: String!, $birth: String!) {
-		newVet(input: { id: $id, name: $name, birth: $birth }) {
+	mutation newBovine($name: String!, $birth: String!) {
+		newBovine(input: { name: $name, birth: $birth }) {
 			id
 			name
-			email
-			phone
-			position
+			birth
 		}
 	}
 `;
@@ -75,7 +73,7 @@ export const DELETE_MANAGER_BY_ID = gql`
 `;
 export const DELETE_BOVINE_BY_ID = gql`
 	mutation deleteBovineById($id: ID!) {
-		deleteVetById(input: { id: $id })
+		deleteBovineById(input: { id: $id })
 	}
 `;
 export const UPDATE_BOVINE_BY_ID = gql`

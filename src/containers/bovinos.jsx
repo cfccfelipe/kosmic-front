@@ -1,5 +1,5 @@
 import { GET_ALL_BOVINE } from '../gql/querysGql';
-import { NEW_VET, DELETE_BOVINE_BY_ID } from '../gql/mutationsGql';
+import { DELETE_BOVINE_BY_ID, NEW_BOVINE } from '../gql/mutationsGql';
 import { useQuery, useMutation } from '@apollo/client';
 import InfoMostrada from '../components/infoMostrada';
 import { useState } from 'react';
@@ -20,24 +20,18 @@ const Bovinos = () => {
 	};
 
 	const FormNewBovi = () => {
-		const [id, setId] = useInput('');
-		const [fullname, setFName] = useInput('');
-		const [email, setEmail] = useInput('');
-		const [phone, setPhone] = useInput(0);
-		const [clinic, setClinic] = useInput('');
+		const [name, setName] = useInput('');
+		const [birth, setBirth] = useInput('');
 
-		const [newVet, { data, loading, error }] = useMutation(NEW_VET);
+		const [newBovine, { data, loading, error }] = useMutation(NEW_BOVINE);
 
 		const enviar = (e) => {
 			e.preventDefault();
 
-			newVet({
+			newBovine({
 				variables: {
-					id: id,
-					fullname: fullname,
-					email: email,
-					phone: Number(phone),
-					clinic: clinic
+					name: name,
+					birth: birth
 				}
 			});
 
@@ -56,27 +50,18 @@ const Bovinos = () => {
 				<div className='columncontainer flexcenter'>
 					<Navbar />
 					<form className='flexcenter' onSubmit={enviar}>
-						<h2>Añade una nueva vaca</h2>
+						<h2>Añade nuevo veterinario</h2>
 
-						<p>Identificacion</p>
-						<InputText setter={setId} val={id} />
+						<p>Nombre o ID dispositivo Vaca</p>
+						<InputText setter={setName} val={name} />
 
-						<p>Nombre completo</p>
-						<InputText setter={setFName} val={fullname} />
-
-						<p>Correo Electronico</p>
-						<InputText setter={setEmail} val={email} />
-
-						<p>Numero de celular</p>
-						<InputText setter={setPhone} val={phone} />
-
-						<p>Nombre de Clinica asociada</p>
-						<InputText setter={setClinic} val={clinic} />
+						<p>Fecha de nacimiento Vca</p>
+						<InputText setter={setBirth} val={birth} />
 
 						<button className='submitbtn'> Envia el registro </button>
 					</form>
-					<Footer />
 				</div>
+				<Footer />
 			</div>
 		);
 	};
