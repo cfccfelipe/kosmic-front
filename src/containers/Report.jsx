@@ -3,6 +3,7 @@ import Navbar from '../components/navbar';
 import { useEffect, useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, child, get } from 'firebase/database';
+import Monitor from './monitor';
 
 const Report = () => {
 	const firebaseConfig = {
@@ -75,6 +76,7 @@ const Report = () => {
 							</tr>
 						))}
 				</table>
+                <Monitor />
 			</div>
 		</div>
 	);
