@@ -6,8 +6,8 @@ export const GET_ALL_VETS = gql`
 			fullname
 			email
 			phone
-            clinic
-            id
+			clinic
+			id
 		}
 	}
 `;
@@ -15,11 +15,84 @@ export const GET_ALL_VETS = gql`
 export const GET_VET_BY_ID = gql`
 	query getVetById($id: String!) {
 		getVetById {
-		    fullname
+			fullname
 			email
 			phone
-            clinic
-            id
+			clinic
+			id
+		}
+	}
+`;
+export const GET_ALL_MANAGERS = gql`
+	query getAllManagers {
+		getAllManagers {
+			_id
+			id
+			name
+			email
+			phone
+			position
+			bovines {
+				bovine_id {
+					name
+					birth
+					state
+					records {
+						record_id {
+							event_date
+							temperature
+							heart_rate
+							breathing_rate
+						}
+						treatment
+					}
+				}
+			}
+			vets {
+				vet_id {
+					fullname
+					email
+					phone
+					clinic
+				}
+			}
+		}
+	}
+`;
+
+export const GET_MANAGER_BY_ID = gql`
+	query getManagerById($id: String!) {
+		getManagerById {
+			_id
+			id
+			name
+			email
+			phone
+			position
+			bovines {
+				bovine_id {
+					name
+					birth
+					state
+					records {
+						record_id {
+							event_date
+							temperature
+							heart_rate
+							breathing_rate
+						}
+						treatment
+					}
+				}
+			}
+			vets {
+				vet_id {
+					fullname
+					email
+					phone
+					clinic
+				}
+			}
 		}
 	}
 `;
