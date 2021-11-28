@@ -20,17 +20,65 @@ const Monitor = ({DatosVitales}) => {
         return pro/ arr.length;
     }
 
-    let promedioTemp = promedio(DatosVitales.map(vac =>  vac.variables.temperatura));
-    let promedioCard = promedio(DatosVitales.map(vac =>  vac.variables.cardiaco));
-    let promedioResp = promedio(DatosVitales.map(vac =>  vac.variables.respiracion));
+    const tempA =  DatosVitales.map(vac =>  vac.variables.temperatura);
+    const cardA =  DatosVitales.map(vac =>  vac.variables.cardiaco);
+    const respA =  DatosVitales.map(vac =>  vac.variables.respiracion);
+    const dataTA =  DatosVitales.map((vac,i) =>  {
+        return {
+        x: i,
+        y: vac.variables.temperatura, 
+        }
+    });
+    const dataCA =  DatosVitales.map((vac,i) =>  {
+        return {
+        x: i,
+        y: vac.variables.cardiaco, 
+        }
+    });
+    const dataRA =  DatosVitales.map((vac,i) =>  {
+        return {
+        x: i,
+        y: vac.variables.respiracion, 
+        }
+    });
+
+    const promedioTemp = promedio(tempA); 
+    const promedioCard = promedio(cardA);
+    const promedioResp = promedio(respA);
+
+    const Grafica = () => {
+
+
+
+        return (
+
+            <div className="fondoblanco" >
+                <VictoryChart>
+                    <VictoryLine data={dataTA} /> 
+                    <VictoryLine data={dataCA}/>
+                    <VictoryLine data={dataRA}/>
+                </VictoryChart>
+            </div>
+        );
+    }
 
     return (
         <div className="monitor-container flexcenter" >
             <div className="despliegue-data flexcenter">
-                <p>Temperatura <br/>Promedio: {promedioTemp}</p>
-                <p>Frecuencia Cardiaca <br/>Promedio: {promedioCard}</p>
-                <p>Frecuencia Respiratoria <br/>Promedio: {promedioResp}</p>
+                <div className="caja-promedios flexcenter">
+                    <h5>Temperatura Promedio</h5>
+                    <p>{promedioTemp}</p>
+                </div>
+                <div className="caja-promedios flexcenter">
+                    <h5>Frecuencia Cardiaca <br/> Promedio</h5>
+                    <p>{promedioCard}</p>
+                </div>
+                <div className="caja-promedios flexcenter">
+                    <h5>Frecuencia Respiratoria <br/> Promedio</h5>
+                    <p>{promedioResp}</p>
+                </div>
             </div>
+            <Grafica />
         </div>
     );
 }
