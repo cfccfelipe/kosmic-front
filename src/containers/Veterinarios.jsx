@@ -147,6 +147,7 @@ const Veterinarios = () => {
 	return (
 		<>
 			<Content />
+            <FormNewVet />
 		</>
 	);
 };

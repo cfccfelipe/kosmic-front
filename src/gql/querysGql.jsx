@@ -23,14 +23,22 @@ export const GET_VET_BY_ID = gql`
 		}
 	}
 `;
-export const GET_ALL_BOVINES = gql`
-	query getAllBovines{
-		getAllBovines {
+export const GET_ALL_BOVINE = gql`
+	query getAllBovine{
+		getAllBovine {
 		    name
+            id
 			birth
 			state
-            records
-            create_at
+            records {
+                record_id {
+                    temperature
+                    heart_rate
+                    breathing_rate
+                    event_date
+                }
+                treatment
+            }
 		}
 	}
 `;
@@ -40,7 +48,6 @@ export const GET_BOVINE_BY_ID = gql`
 		    name
 			birth
 			state
-            records
             create_at
 		}
 	}
