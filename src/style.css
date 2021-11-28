@@ -204,8 +204,8 @@ body * {
 }
 
 .info-display{
-    width: 400px;
-    height: 200px;
+    min-width: 400px;
+    padding: 50px 20px;
     margin: 40px;
     border-radius: 20px;
     flex-direction: column;
