@@ -23,3 +23,25 @@ export const GET_VET_BY_ID = gql`
 		}
 	}
 `;
+export const GET_ALL_BOVINES = gql`
+	query getAllBovines{
+		getAllBovines {
+		    name
+			birth
+			state
+            records
+            create_at
+		}
+	}
+`;
+export const GET_BOVINE_BY_ID = gql`
+	query getBovineById($id: String!) {
+		getBovineById {
+		    name
+			birth
+			state
+            records
+            create_at
+		}
+	}
+`;

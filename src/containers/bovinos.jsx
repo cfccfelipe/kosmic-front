@@ -1,5 +1,6 @@
-import {  GET_ALL_VETS } from '../gql/querysGql';
+import {  GET_ALL_BOVINES } from '../gql/querysGql';
 import { NEW_VET, DELETE_VET_BY_ID  } from '../gql/mutationsGql';
+*/
 import { useQuery, useMutation } from '@apollo/client';
 import InfoMostrada from '../components/infoMostrada';
 import { useState } from 'react';
@@ -7,7 +8,7 @@ import useInput from "../hooks/useInput";
 import InputText from "../components/textInput";
 import MenuDes from '../components/menuDesplegable';
 
-const Veterinarios = () => {
+const Bovinos = () => {
 
 
     const [isDisplayed, setDisplayed] = useState(false);                                         
@@ -150,4 +151,4 @@ const Veterinarios = () => {
 	);
 };
 
-export default Veterinarios;
+export default Bovinos;
