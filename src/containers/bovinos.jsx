@@ -20,10 +20,8 @@ const Bovinos = () => {
 	};
 
 	const FormNewBovi = () => {
-		const [id, setId] = useInput('');
-		const [fullname, setFName] = useInput('');
-		const [email, setEmail] = useInput('');
-		const [phone, setPhone] = useInput(0);
+		const [name, setName] = useInput('');
+		const [birth, setBirth] = useInput(0);
 		const [clinic, setClinic] = useInput('');
 
 		const [newVet, { data, loading, error }] = useMutation(NEW_VET);
@@ -33,11 +31,8 @@ const Bovinos = () => {
 
 			newVet({
 				variables: {
-					id: id,
-					fullname: fullname,
-					email: email,
-					phone: Number(phone),
-					clinic: clinic
+					name: name,
+					birth: birth,
 				}
 			});
 
@@ -58,20 +53,12 @@ const Bovinos = () => {
 					<form className='flexcenter' onSubmit={enviar}>
 						<h2>Añade una nueva vaca</h2>
 
-						<p>Identificacion</p>
-						<InputText setter={setId} val={id} />
+						<p>Nombre</p>
+						<InputText setter={setName} val={name} />
 
-						<p>Nombre completo</p>
-						<InputText setter={setFName} val={fullname} />
+						<p>Fecha de nacimiento</p>
+						<InputText setter={setBirth} val={birth} />
 
-						<p>Correo Electronico</p>
-						<InputText setter={setEmail} val={email} />
-
-						<p>Numero de celular</p>
-						<InputText setter={setPhone} val={phone} />
-
-						<p>Nombre de Clinica asociada</p>
-						<InputText setter={setClinic} val={clinic} />
 
 						<button className='submitbtn'> Envia el registro </button>
 					</form>
@@ -93,7 +80,7 @@ const Bovinos = () => {
 		listBovinos = data?.getAllBovine.map((bovi, i) => {
 			return (
 				<InfoMostrada key={i} method={() => desplegarMenu(bovi.id)}>
-					<h3>{bovi.name} </h3>
+					<h2>{bovi.name} </h2>
 					<p>Fecha de nacimiento : {Date(bovi.birth).split(' ', 4)} </p>
 					<p>Estado : {bovi.state} </p>
 				</InfoMostrada>
