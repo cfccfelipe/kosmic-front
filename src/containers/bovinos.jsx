@@ -1,6 +1,5 @@
 import {  GET_ALL_BOVINES } from '../gql/querysGql';
-import { NEW_VET, DELETE_VET_BY_ID  } from '../gql/mutationsGql';
-*/
+//import { NEW_VET, DELETE_VET_BY_ID  } from '../gql/mutationsGql';
 import { useQuery, useMutation } from '@apollo/client';
 import InfoMostrada from '../components/infoMostrada';
 import { useState } from 'react';
@@ -19,7 +18,8 @@ const Bovinos = () => {
         console.log(id);                                                                         
         setDisplayed(!isDisplayed);                                                              
     }   
-    const FormNewVet = () => {                                                                   
+    /*
+    const FormNewVet = () => {
 
 	    const [id, setId] = useInput('');
         const [fullname, setFName] = useInput("");                                               
@@ -83,29 +83,33 @@ const Bovinos = () => {
         )                                                                                        
     }
 
+    */
 	const Content = () => {
-		let listVets = [];
-		const { data, loading, error } = useQuery(GET_ALL_VETS);
+		let listBovinos = [];
+		const { data, loading, error } = useQuery(GET_ALL_BOVINES);
 
 
 		if (loading) return 'Loading...';
 		if (error) return <pre>{error.message}</pre>;
 
-		listVets = data?.getAllVets.map((veterinarios, i) => {
+		listBovinos = data?.getAllBovines.map((bovi, i) => {
 			return (
 				<InfoMostrada
                     key={i}
-                    method={() => desplegarMenu(veterinarios._id)}
-					email={veterinarios.email}
-					phone={veterinarios.phone}
-					name={veterinarios.fullname}
-				/>
+                    method={() => desplegarMenu(bovi._id)}
+				>
+                    <h2>{bovi.fullname} </h2>
+                    <p>Fecha de nacimiento : {bovi.birth} </p>
+                    <p>Estado : {bovi.state} </p>
+
+                </InfoMostrada>
 			);
 		});
-
+        
+        /*
         const MenuCompleto = () => {
 
-            let {fullname, clinic, id, email, phone } = data?.getAllVets.filter(el => el._id ===focusId)[0]
+            let {fullname, clinic, id, email, phone } = data?.getAllBovines.filter(el => el._id ===focusId)[0]
             
 	        const [deleteVetById, { data: deleteVet }] = useMutation(DELETE_VET_BY_ID);
 
@@ -134,21 +138,17 @@ const Bovinos = () => {
 
             )
         }
+        */
 		return (
 			<div className='page-container flexcenter'>
-				<h2>Lista de Veterinarios</h2>
+				<h2>Lista de Bovinos</h2>
 
-				<div className='info-container'>{listVets}</div>
-                    {isDisplayed && <MenuCompleto />}
+				<div className='info-container'>{listBovinos}</div>
+
 			</div>
 		);
 	};
-	return (
-		<>
-			<Content />
-            <FormNewVet />
-		</>
-	);
+	return 	<Content />
 };
 
 export default Bovinos;

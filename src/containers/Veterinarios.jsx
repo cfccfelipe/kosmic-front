@@ -95,10 +95,12 @@ const Veterinarios = () => {
 				<InfoMostrada
                     key={i}
                     method={() => desplegarMenu(veterinarios._id)}
-					email={veterinarios.email}
-					phone={veterinarios.phone}
-					name={veterinarios.fullname}
-				/>
+				>
+                    <h2>{veterinarios.fullname} </h2>
+                    <p>Correo : {veterinarios.email} </p>
+                    <p>Telefono : {veterinarios.email} </p>
+                    
+                </InfoMostrada>
 			);
 		});
 
@@ -145,7 +147,6 @@ const Veterinarios = () => {
 	return (
 		<>
 			<Content />
-            <FormNewVet />
 		</>
 	);
 };
