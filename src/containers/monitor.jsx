@@ -52,12 +52,23 @@ const Monitor = ({DatosVitales}) => {
 
         return (
 
-            <div className="fondoblanco" >
+            <div className="fondoblanco flexcenter" >
                 <VictoryChart>
-                    <VictoryLine data={dataTA} /> 
+                    <VictoryLine data={dataTA} 
+                    style={{ data: { stroke: "#25ba52" } }}
+            /> 
                     <VictoryLine data={dataCA}/>
-                    <VictoryLine data={dataRA}/>
+                    <VictoryLine data={dataRA}
+                    style={{ data: { stroke: "red" } }}
+            />
+
+
                 </VictoryChart>
+                <div className="flsty">
+                    <p style={{color:"#25ba52"}}>Temperatura</p> 
+                    <p style={{color:"black"}}>Frecuencia Cardiaca</p> 
+                    <p style={{color:"red"}}>Frecuencia Respiratoria</p> 
+                </div>
             </div>
         );
     }

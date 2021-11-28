@@ -142,12 +142,23 @@ body * {
     border-radius: 20px;
     border-right: 6px solid var(--mainGreen);
     border-bottom: 6px solid var(--mainGreen);
+    flex-direction:column;
     width:80%;
-    height: 400px;
     background-color: white;
     margin-bottom: 50px;
 }
 
+
+.flsty{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.flsty p{
+    margin: 20px; 
+}
 
 /* tablas */
 
