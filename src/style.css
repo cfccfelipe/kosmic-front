@@ -98,6 +98,34 @@ body * {
     background-color: var(--mainGreen);
 }
 
+/* filtro  */
+
+.monitor-container{
+    color: red;
+}
+
+.filtro{
+    margin-bottom: 50px;
+}
+.filtro-btn{
+    background-color: var(--mainGreen);
+    color: white;
+    height: 40px;
+    border: 1px solid var(--mainGreen);
+    border-radius: 0 20px 20px 0;
+}
+
+.filtro-input{
+    height: 40px;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid var(--mainGreen);
+    text-align: center;
+
+}
+
+.despliegue-data{
+    justify-content: space-around;
+}
 
 
 
@@ -129,11 +157,9 @@ body * {
 
 .this-table td, th{
     color:white;
+    text-align: center;
 }
 
-.this-table tr{
-    padding-bottom: 30px;
-}
 
 /* info despliegue - cartas */
 
