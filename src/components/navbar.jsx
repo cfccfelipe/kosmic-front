@@ -14,7 +14,7 @@ const Navbar = () => {
 				<Link to='/veterinarios'>Veterinarios </Link>
 				<Link to='/gestores'>Gestores </Link>
 				<Link to='/bovinos'>Bovinos </Link>
-				<Link to='/report'>Inicio </Link>
+				<Link to='/report'>Reportes </Link>
 			</div>
 		</nav>
 	);
