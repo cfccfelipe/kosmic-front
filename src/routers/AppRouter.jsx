@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Gerentes from '../containers/Gerentes';
+import Gestores from '../containers/Gestores';
 import Veterinarios from '../containers/Veterinarios';
 import Home from '../containers/Home';
 import UpdateVet from '../containers/updateVet';
@@ -13,7 +13,7 @@ const AppRouter = () => {
 			<Navbar />
 			<Routes>
 				<Route exact path='/' element={<Home />} />
-				<Route exact path='/gerentes' element={<Gerentes />} />
+				<Route exact path='/gestores' element={<Gestores />} />
 				<Route exact path='/veterinarios' element={<Veterinarios />} />
 				<Route exact path='/vetActualizar/:id' element={<UpdateVet />} />
 				<Route exact path='/report' element={<Report />} />
