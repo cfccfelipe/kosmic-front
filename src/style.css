@@ -153,9 +153,20 @@ body * {
     border-radius: 20px;
     flex-direction: column;
     border: 1px  solid var(--darkGrey);
+    line-height : 10px;
     align-items: center;
 }
-
+/*
+.info-display-anomaly{
+    width: 450px;
+    height: 300px;
+    margin: 40px;
+    border-radius: 20px;
+    flex-direction: column;
+    border: 1px  solid var(--darkGrey);
+    align-items: center;
+}
+*/
 .info-display:hover h2{
     color: white;
 }
@@ -169,7 +180,7 @@ body * {
 
 
 
-/* Menu centrado */
+/* Menu centrado */cm
 
 .centered-menu{
     background-color: var(--darkGrey);
