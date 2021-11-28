@@ -50,7 +50,7 @@ const Report = () => {
 					/>
 					<button className='btn btn-success'>Filtrar</button>
 				</div>
-				<table className='table-report'>
+				<table className='table-container'>
 					<div className='tbody'>
 						<tr>
 							<th>ID Vaca</th>
