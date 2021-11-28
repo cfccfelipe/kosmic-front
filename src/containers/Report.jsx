@@ -40,7 +40,7 @@ const Report = () => {
 	return (
 		<div className='page-container flexcenter'>
 			<Navbar />
-			<h1>Signos vitales en tiempo real</h1>
+			<h1>Reportes de signos Vitales</h1>
 			<div>
 				<div class='input-group mb-3'>
 					<input
@@ -72,7 +72,6 @@ const Report = () => {
 					</div>
 				</table>
 			</div>
-			<Footer />
 		</div>
 	);
 };
