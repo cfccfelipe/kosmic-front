@@ -85,13 +85,12 @@ const Gestores = () => {
 
 		listManager = data?.getAllManagers.map((gestores, i) => {
 			return (
-				<InfoMostrada
-					key={i}
-					method={() => desplegarMenu(gestores._id)}
-					email={gestores.email}
-					phone={gestores.phone}
-					name={gestores.name}
-				/>
+				<InfoMostrada key={i} method={() => desplegarMenu(gestores._id)}>
+					<h3>{gestores.name} </h3>
+					<p>Email : {gestores.email} </p>
+					<p>Phone : {gestores.phone} </p>
+					<p>Cargo : {gestores.position} </p>
+				</InfoMostrada>
 			);
 		});
 

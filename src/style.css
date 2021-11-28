@@ -115,6 +115,7 @@ body * {
     border-radius: 20px;
     flex-direction: column;
     border: 1px  solid var(--darkGrey);
+    align-items: center;
 }
 
 .info-display:hover{
@@ -250,4 +251,33 @@ body * {
     color: white;
     background-color: var(--mainGreen);
 }
+
+.table-report {
+    margin: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+.tbody th, td {
+    justify-content: center;
+    color: black;
+    padding: 5px;
+    width: 20%;
+    text-align: center;
+}
+
+.tbody tr:nth-child(odd) {
+  background-color: white;
+ 
+}
+
+.tbody tr:nth-child(even) {
+  background-color: #B0F0BB;
+  
+}
+
+
+
+
+
+
       

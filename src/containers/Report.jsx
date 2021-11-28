@@ -40,29 +40,38 @@ const Report = () => {
 	return (
 		<div className='page-container flexcenter'>
 			<Navbar />
+			<h1>Signos vitales en tiempo real</h1>
 			<div>
-				<h1>Signos vitales en tiempo real</h1>
-				<table>
-					<tr>
-						<th>ID</th>
-						<th>Hora</th>
-						<th>Temperatura</th>
-						<th>Ritmo Cardiaco </th>
-						<th>Ritmo Respiratorio</th>
-					</tr>
-
-					{vacas.map((vaca) => (
+				<div class='input-group mb-3'>
+					<input
+						className='input-group-text'
+						id='filtrarbyid'
+						placeholder={'ID de Vaca'}
+					/>
+					<button className='btn btn-success'>Filtrar</button>
+				</div>
+				<table className='table-report'>
+					<div className='tbody'>
 						<tr>
-							<td>{vaca.id}</td>
-							<td>{vaca.tiempo}</td>
-							<td>{vaca.variables.temperatura}</td>
-							<td>{vaca.variables.cardiaco}</td>
-							<td>{vaca.variables.respiracion}</td>
+							<th>ID Vaca</th>
+							<th>Hora</th>
+							<th>Temperatura</th>
+							<th>Ritmo Cardiaco </th>
+							<th>Ritmo Respiratorio</th>
 						</tr>
-					))}
+
+						{vacas.map((vaca) => (
+							<tr>
+								<td>{vaca.id}</td>
+								<td>{vaca.tiempo}</td>
+								<td>{vaca.variables.temperatura}</td>
+								<td>{vaca.variables.cardiaco}</td>
+								<td>{vaca.variables.respiracion}</td>
+							</tr>
+						))}
+					</div>
 				</table>
 			</div>
-
 			<Footer />
 		</div>
 	);

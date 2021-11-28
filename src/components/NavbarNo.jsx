@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import ToroLogo from '../media/LogoToro.png';
 
-const Navbar = () => {
+const NavbarNo = () => {
 	return (
 		<nav className='navbar-main'>
 			<Link to='/' className='logo-container'>
@@ -9,15 +9,11 @@ const Navbar = () => {
 			</Link>
 
 			<div className='redirects'>
-				<Link to='/'>Salir </Link>
-
-				<Link to='/veterinarios'>Veterinarios </Link>
-				<Link to='/gestores'>Gestores </Link>
-				<Link to='/bovinos'>Bovinos </Link>
-				<Link to='/report'>Inicio </Link>
+				<Link to='/report'>Ingresar </Link>
+				<Link to='/'>Inicio </Link>
 			</div>
 		</nav>
 	);
 };
 
-export default Navbar;
+export default NavbarNo;
