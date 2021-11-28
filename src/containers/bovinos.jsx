@@ -121,9 +121,13 @@ const Bovinos = () => {
 
 					{LinksReports}
 					<div class='btn-group' role='group' aria-label='Basic example'>
-						<button type='button' class='btn btn-secondary'>
-							Ver Anomalias
-						</button>
+						<div>
+							<Link to={`/anomalias/${focusId}`}>
+								<button type='button' class='btn btn-secondary'>
+									Ver Anomalias
+								</button>
+							</Link>
+						</div>
 					</div>
 				</MenuDes>
 			);

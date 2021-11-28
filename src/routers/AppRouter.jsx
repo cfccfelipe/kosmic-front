@@ -8,11 +8,13 @@ import Navbar from '../components/navbar';
 import Report from '../containers/Report';
 import Bovinos from '../containers/bovinos';
 import UpdateBovine from '../containers/UpdateBovine';
+import Records from '../containers/Records';
+import Treament from '../containers/Treament';
 
 const AppRouter = () => {
 	return (
 		<Router>
-            <Navbar />
+			<Navbar />
 			<Routes>
 				<Route exact path='/' element={<Home />} />
 				<Route exact path='/gestores' element={<Gestores />} />
@@ -21,6 +23,8 @@ const AppRouter = () => {
 				<Route exact path='/report' element={<Report />} />
 				<Route exact path='/bovinos' element={<Bovinos />} />
 				<Route exact path='/bovino/:id' element={<UpdateBovine />} />
+				<Route exact path='/anomalias/:id' element={<Records />} />
+				<Route exact path='/anomalia/:id' element={<Treament />} />
 			</Routes>
 		</Router>
 	);

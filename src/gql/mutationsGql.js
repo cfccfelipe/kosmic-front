@@ -84,3 +84,41 @@ export const UPDATE_BOVINE_BY_ID = gql`
 		}
 	}
 `;
+export const NEW_RECORD_ON_BOVINE = gql`
+	mutation newRecordOnBovineById(
+		$bovine_id: ID!
+		$event_date: String!
+		$temperature: Float!
+		$heart_rate: Float!
+		$breathing_rate: Float!
+	) {
+		newRecordOnBovineById(
+			input: {
+				bovine_id: $bovine_id
+				records: {
+					newrecord: {
+						temperature: $temperature
+						event_date: $event_date
+						heart_rate: $heart_rate
+						breathing_rate: $breathing_rate
+					}
+				}
+			}
+		) {
+			name
+			birth
+			state
+			records {
+				id
+				record_id {
+					id
+					event_date
+					temperature
+					heart_rate
+					breathing_rate
+				}
+				treatment
+			}
+		}
+	}
+`;
