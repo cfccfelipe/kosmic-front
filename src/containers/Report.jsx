@@ -37,39 +37,41 @@ const Report = () => {
 		}
 	}
 
-	return (
-		<div className='page-container flexcenter'>
-			<Navbar />
-			<h1>Reportes de signos Vitales</h1>
-			<div>
-				<div class='input-group mb-3'>
-					<input
-						className='input-group-text'
-						id='filtrarbyid'
-						placeholder={'ID de Vaca'}
-					/>
-					<button className='btn btn-success'>Filtrar</button>
-				</div>
-				<table className='table-container'>
-					<div className='tbody'>
-						<tr>
-							<th>ID Vaca</th>
-							<th>Hora</th>
-							<th>Temperatura</th>
-							<th>Ritmo Cardiaco </th>
-							<th>Ritmo Respiratorio</th>
-						</tr>
+	const FiltroVaca = () => {
+		return (
+			<div class='input-group mb-3'>
+				<input
+					className='input-group-text'
+					id='filtrarbyid'
+					placeholder={'ID de Vaca'}
+				/>
+				<button className='submitbtn'>Filtrar</button>
+			</div>
+		);
+	};
 
-						{vacas.map((vaca) => (
-							<tr>
-								<td>{vaca.id}</td>
-								<td>{vaca.tiempo}</td>
-								<td>{vaca.variables.temperatura}</td>
-								<td>{vaca.variables.cardiaco}</td>
-								<td>{vaca.variables.respiracion}</td>
-							</tr>
-						))}
-					</div>
+	return (
+		<div className='page-container2 chto-white flexcenter'>
+			<div className='table-container flexcenter'>
+				<h2>Reportes de signos Vitales</h2>
+				<table className='this-table'>
+					<tr>
+						<th>ID Vaca</th>
+						<th>Hora</th>
+						<th>Temperatura</th>
+						<th>Ritmo Cardiaco </th>
+						<th>Ritmo Respiratorio</th>
+					</tr>
+
+					{vacas.map((vaca) => (
+						<tr>
+							<td>{vaca.id}</td>
+							<td>{vaca.tiempo}</td>
+							<td>{vaca.variables.temperatura}</td>
+							<td>{vaca.variables.cardiaco}</td>
+							<td>{vaca.variables.respiracion}</td>
+						</tr>
+					))}
 				</table>
 			</div>
 		</div>

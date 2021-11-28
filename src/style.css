@@ -104,9 +104,8 @@ body * {
 /* tablas */
 
 .table-container{
-    margin-top: 120px;
+    margin-top: 180px;
     background-color: var(--darkGrey);
-    color: white;
     padding: 70px 50px;
     flex-direction: column;
     border-radius: 20px 20px 0 0;
@@ -128,8 +127,8 @@ body * {
     width: 900px;
 }
 
-.this-table th, td{
-    text-align: center;
+.this-table td, th{
+    color:white;
 }
 
 .this-table tr{

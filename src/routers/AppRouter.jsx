@@ -12,6 +12,7 @@ import UpdateBovine from '../containers/UpdateBovine';
 const AppRouter = () => {
 	return (
 		<Router>
+            <Navbar />
 			<Routes>
 				<Route exact path='/' element={<Home />} />
 				<Route exact path='/gestores' element={<Gestores />} />

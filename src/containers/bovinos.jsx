@@ -78,7 +78,7 @@ const Bovinos = () => {
 		listBovinos = data?.getAllBovine.map((bovi, i) => {
 			return (
 				<InfoMostrada key={i} method={() => desplegarMenu(bovi.id)}>
-					<h3>{bovi.name} </h3>
+					<h2>{bovi.name} </h2>
 					<p>Fecha de nacimiento : {Date(bovi.birth).split(' ', 4)} </p>
 					<p>Estado : {bovi.state} </p>
 				</InfoMostrada>
