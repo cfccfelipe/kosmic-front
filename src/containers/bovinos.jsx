@@ -23,7 +23,7 @@ const Bovinos = () => {
 		const [name, setName] = useInput('');
 		const [birth, setBirth] = useInput('');
 
-		const [newBovine, { data, loading, error }] = useMutation(NEW_BOVINE);
+		const [newBovine, {data, loading, error }] = useMutation(NEW_BOVINE);
 
 		const enviar = (e) => {
 			e.preventDefault();
@@ -39,6 +39,7 @@ const Bovinos = () => {
 				alert(error);
 			} else {
 				alert('Agregado');
+                console.log(data);
 			}
 		};
 
@@ -85,7 +86,7 @@ const Bovinos = () => {
 		});
 
 		const MenuCompleto = () => {
-			let { name, state, id, birth, records } = data?.getAllBovine.filter(
+			let { name, state, records } = data?.getAllBovine.filter(
 				(el) => el.id === focusId
 			)[0];
 
