@@ -1,4 +1,4 @@
-import { VictoryLine, VictoryChart } from "victory";
+import { VictoryLine, VictoryChart, VictoryZoomContainer } from "victory";
 
 
 const Monitor = ({DatosVitales}) => {
@@ -26,7 +26,7 @@ const Monitor = ({DatosVitales}) => {
     const dataTA =  DatosVitales.map((vac,i) =>  {
         return {
         x: i,
-        y: vac.variables.temperatura, 
+        y: vac.variables.temperatura + Math.random(), 
         }
     });
     const dataCA =  DatosVitales.map((vac,i) =>  {
@@ -46,9 +46,10 @@ const Monitor = ({DatosVitales}) => {
     const promedioCard = promedio(cardA);
     const promedioResp = promedio(respA);
 
+
     const Grafica = () => {
 
-
+        /*
 
         return (
 
@@ -64,10 +65,50 @@ const Monitor = ({DatosVitales}) => {
 
 
                 </VictoryChart>
-                <div className="flsty">
+                <div className="label-chart" >
                     <p style={{color:"#25ba52"}}>Temperatura</p> 
                     <p style={{color:"black"}}>Frecuencia Cardiaca</p> 
                     <p style={{color:"red"}}>Frecuencia Respiratoria</p> 
+                </div>
+            </div>
+        );
+        */
+        return (
+            <div className="chart-container flexcenter">
+                <div className="fondoblanco flexcenter">
+                    <h4>Temperatura</h4>
+                    <VictoryChart
+                    containerComponent={
+                    <VictoryZoomContainer 
+                    zoomDomain={{x: [0, DatosVitales.length - 1], y: [28, 31]}}/>}
+            >
+
+                        <VictoryLine data={dataTA} />
+                    
+                    </VictoryChart>
+                </div>
+                <div className="fondoblanco flexcenter">
+                    <h4>Frecuencia Respiratoria</h4>
+                    <VictoryChart
+                    containerComponent={
+                    <VictoryZoomContainer 
+                    zoomDomain={{x: [0, DatosVitales.length - 1], y: [210, 250]}}/>}
+            >
+
+                        <VictoryLine data={dataRA} />
+                    
+                    </VictoryChart>
+                </div>
+                <div className="fondoblanco flexcenter">
+                    <h4>Frecuencia Cardiaca</h4>
+                    <VictoryChart
+                    containerComponent={
+                    <VictoryZoomContainer 
+                    zoomDomain={{x: [0, DatosVitales.length - 1], y: [60, 90]}}/>}
+            >
+
+                        <VictoryLine data={dataCA}/>
+                    </VictoryChart>
                 </div>
             </div>
         );

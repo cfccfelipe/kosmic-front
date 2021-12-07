@@ -1,12 +1,9 @@
 import Footer from '../components/Footer';
-import Navbar from '../components/navbar';
 import { useEffect, useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, child, get } from 'firebase/database';
 import Monitor from './monitor';
 import useInput from '../hooks/useInput';
-import InputText from '../components/textInput';
-import { Button } from 'bootstrap';
 
 const Report = () => {
 	const firebaseConfig = {
@@ -87,25 +84,28 @@ const Report = () => {
 	}
 
 	return (
-		<div className='page-container2 chto-white flexcenter'>
-			<div className='table-container flexcenter'>
-				<h2>Reportes de signos Vitales</h2>
-				<FiltroVaca />
-				{idVaca !== '' && <Monitor DatosVitales={filtVacas} />}
+        <>
+            <div className='page-container2 chto-white flexcenter'>
+                <div className='table-container flexcenter'>
+                    <h2>Reportes de signos Vitales</h2>
+                    <FiltroVaca />
+                    {idVaca !== '' && <Monitor DatosVitales={filtVacas} />}
 
-				<table className='this-table'>
-					<tr>
-						<th>ID Vaca</th>
-						<th>Hora</th>
-						<th>Temperatura</th>
-						<th>Ritmo Cardiaco </th>
-						<th>Ritmo Respiratorio</th>
-					</tr>
+                    <table className='this-table'>
+                        <tr>
+                            <th>ID Vaca</th>
+                            <th>Hora</th>
+                            <th>Temperatura</th>
+                            <th>Ritmo Cardiaco </th>
+                            <th>Ritmo Respiratorio</th>
+                        </tr>
 
-					{vacaCells}
-				</table>
-			</div>
-		</div>
+                        {vacaCells}
+                    </table>
+                </div>
+            </div>
+            <Footer />
+        </>
 	);
 };
 export default Report;
