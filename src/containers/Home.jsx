@@ -27,7 +27,7 @@ const Home = () => {
 						Agropecuarios y veterinarios{' '}
 					</p>
 					<Link to='/report'>
-						<button type='button' class='btn btn-success'>
+						<button class='btn btn-success'>
 							Ingresar
 						</button>
 					</Link>

@@ -61,7 +61,6 @@ const Bovinos = () => {
 						<button className='submitbtn'> Envia el registro </button>
 					</form>
 				</div>
-				<Footer />
 			</div>
 		);
 	};
@@ -145,6 +144,7 @@ const Bovinos = () => {
 		<>
 			<Content />
 			<FormNewBovi />
+			<Footer />
 		</>
 	);
 };

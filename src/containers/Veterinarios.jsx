@@ -74,7 +74,6 @@ const Veterinarios = () => {
 
 						<button className='submitbtn'> Envia el registro </button>
 					</form>
-					<Footer />
 				</div>
 			</div>
 		);
@@ -141,6 +140,7 @@ const Veterinarios = () => {
 		<>
 			<Content />
 			<FormNewVet />
+            <Footer />
 		</>
 	);
 };

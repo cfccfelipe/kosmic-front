@@ -1,6 +1,5 @@
 import { useMutation, useQuery } from '@apollo/client';
 import Footer from '../components/Footer';
-import Navbar from '../components/navbar';
 import { GET_ALL_MANAGERS } from '../gql/querysGql';
 import InfoMostrada from '../components/infoMostrada';
 import { DELETE_MANAGER_BY_ID, NEW_MANAGER } from '../gql/mutationsGql';
@@ -86,7 +85,7 @@ const Gestores = () => {
 		listManager = data?.getAllManagers.map((gestores, i) => {
 			return (
 				<InfoMostrada key={i} method={() => desplegarMenu(gestores._id)}>
-					<h3>{gestores.name} </h3>
+					<h2>{gestores.name} </h2>
 					<p>Email : {gestores.email} </p>
 					<p>Phone : {gestores.phone} </p>
 					<p>Cargo : {gestores.position} </p>
@@ -136,9 +135,9 @@ const Gestores = () => {
 	};
 	return (
 		<>
-			<Navbar />
 			<Content />
 			<FormNewVet />
+			<Footer />
 		</>
 	);
 };
