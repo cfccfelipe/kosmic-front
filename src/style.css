@@ -33,6 +33,17 @@ body * {
     justify-content:center;
 }
 
+.header-with-button{
+    display: grid;
+    width: 90%; 
+    grid-template-columns:8% 84% 8%;
+    margin-top: 50px;
+}
+
+.header-with-button h2{
+    text-align: center;
+}
+
 .page-container{
     margin: 0 auto;
     margin-top: 65px;
@@ -340,7 +351,7 @@ body * {
 
 .whitestr a{
     text-decoration: none;
-    color: white;
+    ;color: white;
     margin:20px;
 
 }
@@ -366,6 +377,10 @@ body * {
 
 .logo-container img{
     margin-left: 30px;
+    height: 50px;
+}
+.logo-container a:hover{
+    transform: scale(1.5);
 }
 
 .redirects{

@@ -14,7 +14,10 @@ import { Link, useParams } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Footer from '../components/Footer';
 
+import ReturnArrow from "../media/GoBacc.svg"
+
 const Records = () => {
+
 	const { id } = useParams();
 	const [isDisplayed, setDisplayed] = useState(false);
 	const [focusId, setFId] = useState('');
@@ -149,7 +152,11 @@ const Records = () => {
 		// };
 		return (
 			<div className='page-container flexcenter'>
-				<h2>Lista de Anomalias {id} </h2>
+
+                <div className="header-with-button">
+			        <Link to="/bovinos"><img alt="return arrow" src={ReturnArrow} /></Link>
+                    <h2>Lista de Anomalias {id} </h2>
+                </div>
 
 				<div className='info-container'>{listRecodsOnBovine}</div>
 				{/* {isDisplayed && <MenuCompleto />} */}
@@ -160,7 +167,6 @@ const Records = () => {
 		<>
 			<Content />
 
-			<button>Volver</button>
 
 			<FormNewRecord />
 		</>

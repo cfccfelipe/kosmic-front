@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ToroLogo from '../media/LogoToro.png';
+import ToroLogo from '../media/LogoToroNuevo.svg';
 
 const Navbar = () => {
 	return (
