@@ -10,7 +10,8 @@ const NavbarNo = () => {
 
 			<div className='redirects'>
 				<Link to='/report'>Ingresar </Link>
-				<Link to='/'>Inicio </Link>
+				<Link to='/home'>Inicio </Link>
+				<Link to='/'>About </Link>
 			</div>
 		</nav>
 	);

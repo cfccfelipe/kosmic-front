@@ -35,10 +35,9 @@ const UpdateBovine = () => {
 		if (error) return <pre>{error.message}</pre>;
 
 		return (
-			<div className='page-container2'>
+			<div className='page-container2' style={{height: "950px"}}>
 				<div className='columncontainer flexcenter'>
-					<Navbar />
-					<form className='flexcenter' onSubmit={enviar}>
+					<form className='flexcenter' style={{padding: "150px 0px"}} onSubmit={enviar}>
 						<h2>Nuevo estado</h2>
 
 						<select
@@ -62,18 +61,15 @@ const UpdateBovine = () => {
 						</div>
 						<p></p>
 					</form>
-					<Footer />
 				</div>
+					<Footer />
 			</div>
 		);
 	};
 
 	return (
-		<div className='page-container flexcenter'>
-			<p></p>
 
 			<UpdateState />
-		</div>
 	);
 };
 

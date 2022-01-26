@@ -339,6 +339,15 @@ body * {
     border-radius: 20px;
 }
 
+.about-mn{
+    width: 1000px;
+    height: 600px;
+}
+
+.about-mn p{
+    width: 80%;
+}
+
 .whitestr{
     width:95%;
     height:95%;
@@ -349,9 +358,19 @@ body * {
     text-align:center;
 }
 
+.columnlm-2{
+    color: white;
+    height:95%;
+    border-radius: 20px;
+    border: 1px solid white;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
 .whitestr a{
     text-decoration: none;
-    ;color: white;
+    color: white;
     margin:20px;
 
 }

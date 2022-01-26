@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Gestores from '../containers/Gestores';
 import Veterinarios from '../containers/Veterinarios';
 import Home from '../containers/Home';
@@ -10,13 +11,15 @@ import Bovinos from '../containers/bovinos';
 import UpdateBovine from '../containers/UpdateBovine';
 import Records from '../containers/Records';
 import Treament from '../containers/Treament';
+import About from '../containers/About';
 
 const AppRouter = () => {
 	return (
 		<Router>
 			<Navbar />
 			<Routes>
-				<Route exact path='/' element={<Home />} />
+				<Route exact path='/' element={<About />} />
+				<Route exact path='/home' element={<Home />} />
 				<Route exact path='/gestores' element={<Gestores />} />
 				<Route exact path='/veterinarios' element={<Veterinarios />} />
 				<Route exact path='/vetActualizar/:id' element={<UpdateVet />} />
